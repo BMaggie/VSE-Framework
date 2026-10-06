@@ -19,5 +19,5 @@ export function PhotoPlaceholder() {
 }
 
 export function SiteFooter() {
-  return <footer className="footer"><div className="site-container"><div className="eyebrow mb-3">LET'S CREATE IMPACT</div><h2>Let's build something impactful together<span className="text-primary">.</span></h2><Button asChild variant="brand" size="lg" className="footer-email"><a href={`mailto:${contactEmail}`}><Mail />{contactEmail}<ArrowUpRight /></a></Button><div className="footer-bottom"><p>© {new Date().getFullYear()} Solomon Joy Abosede. All rights reserved.</p><p>Ideas. Strategy. Execution. Impact.</p></div></div></footer>;
+  return <footer className="footer"><div className="site-container"><div className="eyebrow mb-3">LET'S CREATE IMPACT</div><h2>Let's build something impactful together<span className="text-primary">.</span></h2><Button asChild variant="brand" size="lg" className="footer-email"><a href={`mailto:${contactEmail}`}><Mail />{contactEmail}<ArrowUpRight /></a></Button><div className="footer-bottom"><p className="footer-brandline"><BrandMark size={24} /><span>© {new Date().getFullYear()} Solomon Joy Abosede. All rights reserved.</span></p><p>Ideas. Strategy. Execution. Impact.</p></div></div></footer>;
 }
