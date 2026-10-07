@@ -10,7 +10,7 @@ export const Route = createFileRoute('/about')({
 function AboutPage() {
   return (
     <>
-      <section className="page-header">
+      <section className="page-header page-header-about">
         <div className="site-container">
           <div className="eyebrow">ABOUT</div>
           <h1>

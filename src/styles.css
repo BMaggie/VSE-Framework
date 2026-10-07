@@ -164,6 +164,7 @@
   isolation: isolate;
   overflow: hidden;
   background-color: var(--secondary);
+  background-image: url('/Hero.png');
   padding: 104px 0;
   text-align: center;
 }
@@ -396,11 +397,19 @@
 }
 
 .hero,
-.page-header {
-  background-image: url('/Hero.png');
+.page-header-about,
+.page-header-contact {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.page-header-about {
+  background-image: url('/hero2.png');
+}
+
+.page-header-contact {
+  background-image: url('/Frame.png');
 }
 
 .page-header h1 {
