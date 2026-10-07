@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ArrowRight } from 'lucide-react';
 import { Portrait } from '@/components/site/site-layout';
 import { pageMeta } from '@/components/site/brand';
 
@@ -18,38 +17,22 @@ function AboutPage() {
             <br className="hidden md:block" /> Technology Communicator
           </h1>
         </div>
-                      Her framework moves through Vision, Strategy, and Execution, with clarity and practical direction at each stage.
-      <section className="section">
-              <section className="framework">
-                <div className="site-container">
-                  <div className="eyebrow text-center">HER FRAMEWORK</div>
-                  <div className="framework-steps">
-                    {['Vision', 'Strategy', 'Execution'].map((step, i) => (
-                      <div key={step} className="contents">
-                        <div className="framework-step">
-                          <span>0{i + 1}</span>
-                          <h3>{step}</h3>
-                        </div>
-                        {i < 2 && <ArrowRight className="framework-arrow" aria-hidden="true" />}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
       </section>
-      <section className="framework">
-        <div className="site-container">
-          <div className="eyebrow text-center">HER FRAMEWORK</div>
-          <div className="framework-steps">
-            {['Ideas', 'Strategy', 'Execution', 'Impact'].map((step, i) => (
-              <div key={step} className="contents">
-                <div className="framework-step">
-                  <span>0{i + 1}</span>
-                  <h3>{step}</h3>
-                </div>
-                {i < 3 && <ArrowRight className="framework-arrow" aria-hidden="true" />}
-              </div>
-            ))}
+      <section className="section">
+        <div className="site-container two-column">
+          <Portrait />
+          <div className="story-copy">
+            <div className="eyebrow">MY STORY</div>
+            <h2 className="section-title">Turning ideas into impact, one founder at a time</h2>
+            <p>
+              Solomon Joy Abosede works at the intersection of product strategy, community, and emerging technology, helping founders move from raw ideas to real traction.
+            </p>
+            <p>
+              Her framework moves through Vision, Strategy, and Execution, with clarity and practical direction at each stage.
+            </p>
+            <p>
+              She is also deeply engaged in Bitcoin education and innovation, making complex technology accessible to builders and everyday audiences alike.
+            </p>
           </div>
         </div>
       </section>

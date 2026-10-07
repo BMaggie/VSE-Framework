@@ -1,8 +1,8 @@
 import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
-import { Mail, Menu, X } from 'lucide-react';
+import { ArrowRight, Mail, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { contactEmail } from './brand';
+import { bookingUrl, contactEmail } from './brand';
 
 export function BrandMark({ size = 38 }: { size?: number }) {
   return (
@@ -19,10 +19,8 @@ export function BrandMark({ size = 38 }: { size?: number }) {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const links = <><Link to="/" activeOptions={{ exact: true, includeHash: true }} className="nav-link" onClick={() => setOpen(false)}>Home</Link><Link to="/about" className="nav-link" onClick={() => setOpen(false)}>About</Link><Link to="/contact" className="nav-link" onClick={() => setOpen(false)}>Contact</Link></>;
-  return <header className="site-header"><div className="site-container header-inner"><Link to="/" className="wordmark" aria-label="Solomon Joy Abosede home"><BrandMark /><span className="brand-name">Solomon Joy Abosede<small>Advisor & Communicator</small></span></Link><nav className="desktop-nav" aria-label="Main navigation">{links}</nav><Button asChild variant="brand" className="header-cta"><Link to="/contact">Get in Touch</Link></Button><Button variant="ghost" size="icon" className="mobile-menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>{open && <nav className="mobile-nav" aria-label="Mobile navigation">{links}<Button asChild variant="brand"><Link to="/contact" onClick={() => setOpen(false)}>Get in Touch</Link></Button></nav>}</header>;
+  return <header className="site-header"><div className="site-container header-inner"><Link to="/" className="wordmark" aria-label="Solomon Joy Abosede home"><BrandMark /><span className="brand-name">Solomon Joy Abosede<small>Advisor & Communicator</small></span></Link><nav className="desktop-nav" aria-label="Main navigation">{links}</nav><Button asChild variant="brand" className="header-cta"><a href={bookingUrl} target="_blank" rel="noopener noreferrer">Book a Session</a></Button><Button variant="ghost" size="icon" className="mobile-menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>{open && <nav className="mobile-nav" aria-label="Mobile navigation">{links}<Button asChild variant="brand"><a href={bookingUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Book a Session</a></Button></nav>}</header>;
 }
-import { ArrowRight, Mail, Menu, X } from 'lucide-react';
-
 export function Portrait() {
   return <img src="/Solomon%20portrait.png" alt="Portrait of Solomon Joy Abosede" className="portrait-image" />;
 }
