@@ -21,9 +21,35 @@ export function SiteHeader() {
   const links = <><Link to="/" activeOptions={{ exact: true, includeHash: true }} className="nav-link" onClick={() => setOpen(false)}>Home</Link><Link to="/about" className="nav-link" onClick={() => setOpen(false)}>About</Link><Link to="/contact" className="nav-link" onClick={() => setOpen(false)}>Contact</Link></>;
   return <header className="site-header"><div className="site-container header-inner"><Link to="/" className="wordmark" aria-label="Solomon Joy Abosede home"><BrandMark /><span className="brand-name">Solomon Joy Abosede<small>Advisor & Communicator</small></span></Link><nav className="desktop-nav" aria-label="Main navigation">{links}</nav><Button asChild variant="brand" className="header-cta"><Link to="/contact">Get in Touch</Link></Button><Button variant="ghost" size="icon" className="mobile-menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>{open && <nav className="mobile-nav" aria-label="Mobile navigation">{links}<Button asChild variant="brand"><Link to="/contact" onClick={() => setOpen(false)}>Get in Touch</Link></Button></nav>}</header>;
 }
+import { ArrowRight, Mail, Menu, X } from 'lucide-react';
 
 export function Portrait() {
   return <img src="/Solomon%20portrait.png" alt="Portrait of Solomon Joy Abosede" className="portrait-image" />;
+}
+
+export function FrameworkSection() {
+  const steps = ['Vision', 'Strategy', 'Execution'];
+
+  return (
+    <section className="framework">
+      <div className="site-container">
+        <div className="eyebrow text-center">OUR FRAMEWORK</div>
+        <div className="framework-steps">
+          {steps.map((step, index) => (
+            <div key={step} className="contents">
+              <div className="framework-step">
+                <span>0{index + 1}</span>
+                <h3>{step}</h3>
+              </div>
+              {index < steps.length - 1 && (
+                <ArrowRight className="framework-arrow" aria-hidden="true" />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export function SiteFooter() {

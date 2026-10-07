@@ -96,11 +96,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" },
       { rel: "icon", href: "/logo.png", type: "image/png" },
     ],
+  import { FrameworkSection, SiteHeader, SiteFooter } from '@/components/site/site-layout';
   }),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+        <main><Outlet /><FrameworkSection /></main>
 });
 
 function RootShell({ children }: { children: ReactNode }) {
