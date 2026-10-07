@@ -4,3 +4,5 @@
 - [x] Verify navigation, contact form and mobile layout.
 - [x] Match the supplied Home, About and Contact screenshots while retaining photo placeholders.
 - [x] Verify updated pages and the email draft flow.
+- [x] Add the Book a Session Calendly link and supplied portrait/header photos.
+- [x] Verify booking links and photos on all three pages.
