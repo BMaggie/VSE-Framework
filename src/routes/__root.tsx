@@ -8,7 +8,7 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import { FrameworkSection, SiteHeader, SiteFooter } from "@/components/site/site-layout";
 import appCss from "../styles.css?url";
@@ -118,13 +118,45 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const [showSplash, setShowSplash] = useState(true);
+  const splashDuration = 2200;
+
+  useEffect(() => {
+    const seen = window.sessionStorage.getItem("splash-seen");
+
+    if (seen === "true") {
+      setShowSplash(false);
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      setShowSplash(false);
+      window.sessionStorage.setItem("splash-seen", "true");
+    }, splashDuration);
+
+    return () => window.clearTimeout(timer);
+  }, [splashDuration]);
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <SiteHeader />
-      <main><Outlet /><FrameworkSection /></main>
-      <SiteFooter />
+      {showSplash && (
+        <div className="splash-screen" aria-live="polite" aria-label="Loading Solomon Joy Abosede">
+          <div className="splash-card">
+            <img src="/logo.png" alt="Solomon Joy Abosede logo" className="splash-logo" />
+            <p className="splash-name">Solomon Joy Abosede</p>
+            <span className="splash-tag">Ideas into impact</span>
+          </div>
+        </div>
+      )}
+
+      {!showSplash && (
+        <>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <SiteHeader />
+          <main><Outlet /><FrameworkSection /></main>
+          <SiteFooter />
+        </>
+      )}
     </QueryClientProvider>
   );
 }
