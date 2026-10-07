@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { contactEmail, pageMeta } from '@/components/site/brand';
 
 export const Route = createFileRoute('/contact')({
-  head: () => pageMeta('Contact Solomon — Let’s Build Something Impactful', 'Reach out to Solomon Joy Abosede about product strategy, community building, Bitcoin education, or your next big idea.'),
+  head: () => pageMeta('Contact Solomon: Let’s Build Something Impactful', 'Reach out to Solomon Joy Abosede about product strategy, community building, Bitcoin education, or your next big idea.'),
   component: ContactPage,
 });
 function ContactPage() {
