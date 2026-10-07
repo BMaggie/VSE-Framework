@@ -5,7 +5,15 @@ import { Button } from '@/components/ui/button';
 import { contactEmail } from './brand';
 
 export function BrandMark({ size = 38 }: { size?: number }) {
-  return <svg width={size} height={size} viewBox="0 0 40 40" role="img" aria-label="SJA monogram logo"><rect width="40" height="40" rx="10" fill="var(--primary)" /><text x="20" y="21" textAnchor="middle" dominantBaseline="central" fill="var(--primary-foreground)" fontFamily="Inter, Arial, sans-serif" fontWeight="700" fontSize="12.5" letterSpacing="0.4">SJA</text></svg>;
+  return (
+    <img
+      src="/logo.png"
+      width={size}
+      height={size}
+      alt="Solomon Joy Abosede logo"
+      className="block object-contain"
+    />
+  );
 }
 
 export function SiteHeader() {
