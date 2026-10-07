@@ -21,7 +21,7 @@ function HomePage() {
       <section className="hero">
         <HeaderPhoto src={headerPhotos.home} />
         <div className="site-container">
-          <div className="eyebrow">IDEAS. STRATEGY. EXECUTION. IMPACT.</div>
+          <div className="eyebrow">VISION. STRATEGY. EXECUTION.</div>
           <h1>
             Helping founders turn ideas
             <br className="hidden md:block" /> into impact
@@ -33,7 +33,7 @@ function HomePage() {
           <div className="hero-actions">
             <BookingButton />
             <Button asChild variant="brandOutline">
-              <Link to="/about">Learn More</Link>
+              <Link to="/about">Start with Vision</Link>
             </Button>
           </div>
         </div>

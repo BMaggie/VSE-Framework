@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { ArrowRight, ArrowUpRight, Mail, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { bookingUrl, contactEmail } from './brand';
-import portrait from '@/assets/Solomon_portrait.png.asset.json';
+
+const portraitUrl = '/Solomon%20portrait.png';
 
 export function BookingButton({ className = '' }: { className?: string }) {
   return (
@@ -40,9 +41,6 @@ export function SiteHeader() {
       </Link>
       <Link to="/about" className="nav-link" onClick={() => setOpen(false)}>
         About
-      </Link>
-      <Link to="/" hash="services" activeOptions={{ includeHash: true }} className="nav-link" onClick={() => setOpen(false)}>
-        Services
       </Link>
       <Link to="/contact" className="nav-link" onClick={() => setOpen(false)}>
         Contact
@@ -90,14 +88,14 @@ export function SiteHeader() {
 }
 
 export function Portrait() {
-  return <img src={portrait.url} alt="Portrait of Solomon Joy Abosede" className="portrait-image" />;
+  return <img src={portraitUrl} alt="Portrait of Solomon Joy Abosede" className="portrait-image" />;
 }
 
 export function JoyPortrait() {
   return (
     <img
       className="joy-portrait"
-      src={portrait.url}
+      src={portraitUrl}
       alt="Solomon Joy Abosede"
       loading="lazy"
       width={390}
@@ -158,9 +156,6 @@ export function SiteFooter() {
           <nav className="footer-nav" aria-label="Footer navigation">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
-            <Link to="/" hash="services">
-              Services
-            </Link>
             <Link to="/contact">Contact</Link>
           </nav>
         </div>

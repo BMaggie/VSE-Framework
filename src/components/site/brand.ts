@@ -1,12 +1,9 @@
-import homePhoto from '@/assets/Hero.png.asset.json';
-import aboutPhoto from '@/assets/hero2.png.asset.json';
-import contactPhoto from '@/assets/Frame.png.asset.json';
 import { Coins, Compass, MessageSquareText } from 'lucide-react';
 
 export const headerPhotos = {
-  home: homePhoto.url,
-  about: aboutPhoto.url,
-  contact: contactPhoto.url,
+  home: '/Hero.png',
+  about: '/hero2.png',
+  contact: '/Frame.png',
 };
 
 export const bookingUrl = 'https://calendly.com/the-60-minute-founder-clarity-framework/1hour';

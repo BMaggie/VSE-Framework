@@ -119,7 +119,7 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const [showSplash, setShowSplash] = useState(true);
-  const splashDuration = 2200;
+  const splashDuration = 1400;
 
   useEffect(() => {
     const seen = window.sessionStorage.getItem("splash-seen");
@@ -144,7 +144,7 @@ function RootComponent() {
           <div className="splash-card">
             <img src="/logo.png" alt="Solomon Joy Abosede logo" className="splash-logo" />
             <p className="splash-name">Solomon Joy Abosede</p>
-            <span className="splash-tag">Ideas into impact</span>
+            <span className="splash-tag">Vision. Strategy. Execution.</span>
           </div>
         </div>
       )}
