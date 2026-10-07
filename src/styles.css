@@ -67,13 +67,17 @@
 .nav-link:hover, .nav-link[data-status="active"] { color: var(--primary); }
 .mobile-menu-button, .mobile-nav { display: none; }
 .eyebrow { color: var(--primary); font-weight: 600; font-size: 11px; letter-spacing: 0; text-transform: uppercase; }
-.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--secondary); padding: 104px 0; text-align: center; }
+.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--secondary); padding: 64px 0; text-align: left; }
 .hero::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .45; background: linear-gradient(125deg, var(--accent), var(--secondary) 55%, var(--photo)); }
-.hero h1 { margin: 24px auto; font-size: 48px; line-height: 1.15; font-weight: 750; letter-spacing: 0; max-width: 850px; }
-.hero-copy { font-size: 16px; line-height: 1.55; color: var(--muted-foreground); max-width: 570px; margin-inline: auto; }
-.hero-actions { display: flex; justify-content: center; gap: 14px; margin-top: 26px; }
+.hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 350px); align-items: center; gap: 72px; }
+.hero-content { min-width: 0; }
+.hero h1 { margin: 24px 0; font-size: 48px; line-height: 1.15; font-weight: 750; letter-spacing: 0; max-width: 850px; }
+.hero-copy { font-size: 16px; line-height: 1.55; color: var(--muted-foreground); max-width: 570px; margin: 0; }
+.hero-actions { display: flex; justify-content: flex-start; gap: 14px; margin-top: 26px; }
 .hero-actions a { height: 44px; padding-inline: 26px; }
 .hero-actions a:last-child { border-color: var(--foreground); background: var(--background); }
+.portrait-image { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 35%; }
+.hero .portrait-image { max-height: 510px; }
 .section { padding: 92px 0; }
 .section-title { font-size: 32px; line-height: 1.3; font-weight: 700; margin-top: 14px; }
 .focus-heading { text-align: center; margin-bottom: 50px; }
@@ -86,9 +90,6 @@
 .about-band { background: var(--contrast); color: var(--contrast-foreground); padding: 88px 0; }
 .two-column { display: grid; grid-template-columns: 375px 1fr; gap: 60px; align-items: start; }
 .about-band .two-column { grid-template-columns: 1fr 350px; gap: 90px; align-items: center; }
-.photo-placeholder { background: var(--photo); color: var(--photo-ink); border-radius: 0; aspect-ratio: 3 / 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
-.photo-placeholder span { font-size: 10px; }
-.photo-placeholder svg { width: 48px; height: 48px; stroke-width: 1; opacity: .65; }
 .about-band .eyebrow, .framework .eyebrow { color: var(--photo); }
 .about-band .section-title { font-size: 28px; line-height: 1.3; }
 .about-band p { color: var(--contrast-muted); font-size: 14px; line-height: 1.7; margin-top: 18px; }
@@ -140,11 +141,13 @@
   .desktop-nav, .header-cta { display: none; }
   .mobile-menu-button { display: inline-flex; }
   .mobile-nav { display: flex; flex-direction: column; gap: 5px; padding: 8px 20px 20px; border-top: 1px solid var(--border); }
-  .hero { padding: 68px 0; }
-  .hero h1 { font-size: 36px; line-height: 1.16; margin-top: 23px; }
-  .hero-copy { font-size: 14px; }
-  .hero-actions { gap: 10px; }
+  .hero { padding: 48px 0; text-align: center; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero h1 { font-size: 36px; line-height: 1.16; margin: 23px auto; }
+  .hero-copy { font-size: 14px; margin-inline: auto; }
+  .hero-actions { justify-content: center; gap: 10px; }
   .hero-actions a { padding-inline: 20px; }
+  .hero .portrait-image { width: 100%; max-width: 320px; justify-self: center; }
   .section { padding: 58px 0; }
   .section-title { font-size: 28px; }
   .focus-heading { margin-bottom: 32px; }
@@ -153,7 +156,6 @@
   .focus-card { padding: 26px; }
   .about-band { padding: 58px 0; }
   .two-column, .about-band .two-column { gap: 34px; }
-  .photo-placeholder { width: 100%; max-width: 375px; justify-self: center; }
   .about-band .section-title { font-size: 28px; }
   .footer { padding-top: 48px; }
   .footer h2 { font-size: 24px; }
