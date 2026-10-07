@@ -14,3 +14,5 @@
 - Keep shared brand content and metadata helpers in the site module; ensure every leaf page has its own sharing metadata.
 - Keep the contact form client-side and generate an explicit email draft without claiming delivery; email sending is not connected.
 - Use the global semantic design system and Button variants for all website controls; keep visual roles consistent across pages.
+
+- Keep booking destinations and page-photo URLs in the shared brand module, with reusable booking and portrait controls in the site layout; this keeps all pages consistent.

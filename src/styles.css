@@ -68,7 +68,7 @@
 .mobile-menu-button, .mobile-nav { display: none; }
 .eyebrow { color: var(--primary); font-weight: 600; font-size: 11px; letter-spacing: 0; text-transform: uppercase; }
 .hero { position: relative; isolation: isolate; overflow: hidden; background: var(--secondary); padding: 104px 0; text-align: center; }
-.hero::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .45; background: linear-gradient(125deg, var(--accent), var(--secondary) 55%, var(--photo)); }
+.header-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1; pointer-events: none; }
 .hero h1 { margin: 24px auto; font-size: 48px; line-height: 1.15; font-weight: 750; letter-spacing: 0; max-width: 850px; }
 .hero-copy { font-size: 16px; line-height: 1.55; color: var(--muted-foreground); max-width: 570px; margin-inline: auto; }
 .hero-actions { display: flex; justify-content: center; gap: 14px; margin-top: 26px; }
@@ -86,9 +86,7 @@
 .about-band { background: var(--contrast); color: var(--contrast-foreground); padding: 88px 0; }
 .two-column { display: grid; grid-template-columns: 375px 1fr; gap: 60px; align-items: start; }
 .about-band .two-column { grid-template-columns: 1fr 350px; gap: 90px; align-items: center; }
-.photo-placeholder { background: var(--photo); color: var(--photo-ink); border-radius: 0; aspect-ratio: 3 / 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
-.photo-placeholder span { font-size: 10px; }
-.photo-placeholder svg { width: 48px; height: 48px; stroke-width: 1; opacity: .65; }
+.joy-portrait { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
 .about-band .eyebrow, .framework .eyebrow { color: var(--photo); }
 .about-band .section-title { font-size: 28px; line-height: 1.3; }
 .about-band p { color: var(--contrast-muted); font-size: 14px; line-height: 1.7; margin-top: 18px; }
@@ -98,13 +96,14 @@
 .footer { background: var(--secondary); text-align: center; padding-top: 72px; }
 .footer h2 { font-size: 28px; font-weight: 700; line-height: 1.4; }
 .footer-copy { color: var(--muted-foreground); font-size: 14px; line-height: 1.7; margin: 12px 0 28px; }
+.footer-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; }
 .footer-email { height: 42px; font-size: 12px; }
 .footer-bottom { margin-top: 30px; padding: 30px 0 36px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 11px; color: var(--muted-foreground); gap: 16px; }
 .footer-brandline { display: inline-flex; align-items: center; gap: 9px; text-align: left; }
 .footer-brandline svg { display: block; flex-shrink: 0; }
 .footer-nav { display: flex; gap: 24px; color: var(--foreground); align-items: center; }
 .footer-nav a:hover { color: var(--primary); }
-.page-header { background: var(--secondary); padding: 88px 0; text-align: center; }
+.page-header { position: relative; isolation: isolate; overflow: hidden; background: var(--secondary); padding: 88px 0; text-align: center; }
 .page-header h1 { font-size: 40px; line-height: 1.2; max-width: 860px; font-weight: 700; margin: 18px auto 0; }
 .page-header p { font-size: 16px; color: var(--muted-foreground); line-height: 1.55; max-width: 580px; margin: 20px auto 0; }
 .story-copy p { font-size: 15px; line-height: 1.65; color: var(--muted-foreground); margin-top: 24px; }
@@ -153,7 +152,7 @@
   .focus-card { padding: 26px; }
   .about-band { padding: 58px 0; }
   .two-column, .about-band .two-column { gap: 34px; }
-  .photo-placeholder { width: 100%; max-width: 375px; justify-self: center; }
+  .joy-portrait { width: 100%; max-width: 375px; justify-self: center; }
   .about-band .section-title { font-size: 28px; }
   .footer { padding-top: 48px; }
   .footer h2 { font-size: 24px; }
