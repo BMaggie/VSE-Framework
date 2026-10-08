@@ -16,3 +16,5 @@
 - Use the global semantic design system and Button variants for all website controls; keep visual roles consistent across pages.
 
 - Keep booking destinations and page-photo URLs in the shared brand module, with reusable booking and portrait controls in the site layout; this keeps all pages consistent.
+- Keep the standalone family-tree demo on its own TanStack route, with a pure DAG model separate from Framer Motion rendering; this makes two-parent visibility, unique counts, and collapse behavior testable.
+- Compute tree geometry from visible people and mount only visible nodes and connectors through AnimatePresence; this keeps collapsed branches lightweight and root paths aligned during expansion.
