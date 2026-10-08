@@ -76,8 +76,8 @@ export function layoutTree(visible: Person[], expanded: Set<string>) {
   const top = later.filter((p) => p.generation === 1);
   const weight = (p: Person): number => Math.max(1, children(p.id).reduce((sum, c) => sum + weight(c), 0));
   const total = top.reduce((sum, p) => sum + weight(p), 0);
-  const width = Math.max(960, total * 190 + 160);
-  const usable = Math.min(width - 160, Math.max(420, total * 190));
+  const width = Math.max(960, total * 190 + 320);
+  const usable = Math.min(width - 320, Math.max(420, total * 190));
   const place = (p: Person, left: number, span: number, delay: number) => {
     positions.set(p.id, { x: left + span / 2, y: 440 + (p.generation - 1) * 185, delay });
     const kids = children(p.id);

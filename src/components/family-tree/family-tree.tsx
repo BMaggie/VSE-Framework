@@ -33,7 +33,12 @@ export function FamilyTree() {
 
   useEffect(() => {
     const element = scroller.current;
-    if (element) element.scrollLeft = (960 - element.clientWidth) / 2;
+    if (!element) return;
+    const center = () => { element.scrollLeft = (element.scrollWidth - element.clientWidth) / 2; };
+    center();
+    const observer = new ResizeObserver(center);
+    observer.observe(element);
+    return () => observer.disconnect();
   }, []);
 
   return (

@@ -6,5 +6,5 @@
 - [x] Verify updated pages and the email draft flow.
 - [x] Add the Book a Session Calendly link and supplied portrait/header photos.
 - [x] Verify booking links and photos on all three pages.
-- [ ] Build standalone animated family tree with sample data and collapsible roots.
-- [ ] Test collapse rules and verify desktop, mobile, and reduced-motion interactions.
+- [x] Build standalone animated family tree with sample data and collapsible roots.
+- [x] Test collapse rules and verify desktop, mobile, and reduced-motion interactions.
