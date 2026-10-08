@@ -4,7 +4,6 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -119,7 +118,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const isTreeDemo = useRouterState({ select: (state) => state.location.pathname === '/family-tree' });
   const [showSplash, setShowSplash] = useState(true);
   const splashDuration = 1400;
 
@@ -141,7 +139,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {showSplash && !isTreeDemo && (
+      {showSplash && (
         <div className="splash-screen" aria-live="polite" aria-label="Loading Solomon Joy Abosede">
           <div className="splash-card">
             <img src="/logo.png" alt="Solomon Joy Abosede logo" className="splash-logo" />
@@ -151,11 +149,11 @@ function RootComponent() {
         </div>
       )}
 
-      {(!showSplash || isTreeDemo) && (
+      {!showSplash && (
         <>
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <SiteHeader />
-          <main><Outlet />{!isTreeDemo && <FrameworkSection />}</main>
+          <main><Outlet /><FrameworkSection /></main>
           <SiteFooter />
         </>
       )}

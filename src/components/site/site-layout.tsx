@@ -45,9 +45,6 @@ export function SiteHeader() {
       <Link to="/contact" className="nav-link" onClick={() => setOpen(false)}>
         Contact
       </Link>
-      <Link to="/family-tree" className="nav-link" onClick={() => setOpen(false)}>
-        Family Tree
-      </Link>
     </>
   );
 
