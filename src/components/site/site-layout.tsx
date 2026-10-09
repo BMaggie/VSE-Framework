@@ -39,11 +39,11 @@ export function BrandMark({ size = 38 }: { size?: number }) {
         fontSize="14.5"
         fontWeight="800"
         letterSpacing="0.4"
-        fill="var(--primary)"
+        style={{ fill: 'var(--primary)' }}
       >
         SJA
       </text>
-      <rect x="10" y="27" width="20" height="3" rx="1.5" fill="var(--primary)" />
+      <rect x="10" y="27" width="20" height="3" rx="1.5" style={{ fill: 'var(--primary)' }} />
     </svg>
   );
 }
