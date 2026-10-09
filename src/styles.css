@@ -48,6 +48,8 @@
   --photo: oklch(0.87 0.025 295);
   --photo-ink: oklch(0.62 0.052 295);
   --shadow-card: 0 4px 18px oklch(0.207 0.01 285 / 0.025);
+  --brand-mark-ink: #17171C;
+  --brand-mark-purple: #6B45C2;
 }
 
 @layer base {
@@ -119,9 +121,11 @@
   width: min(100%, 520px);
 }
 
-.splash-content > img {
+.brand-mark {
   display: block;
-  object-fit: contain;
+  flex-shrink: 0;
+  font-family: "Poppins", var(--font-sans);
+  font-weight: 900;
 }
 
 .splash-name {
