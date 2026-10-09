@@ -16,3 +16,4 @@
 - Use the global semantic design system and Button variants for all website controls; keep visual roles consistent across pages.
 
 - Keep booking destinations and page-photo URLs in the shared brand module, with reusable booking and portrait controls in the site layout; this keeps all pages consistent.
+- Keep the first-load splash in a root-mounted overlay with the page mounted underneath; this avoids layout shifts and route-change replays.

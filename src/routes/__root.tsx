@@ -8,9 +8,10 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 
 import { FrameworkSection, SiteHeader, SiteFooter } from "@/components/site/site-layout";
+import { SplashScreen } from "@/components/site/splash-screen";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -119,44 +120,17 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const [showSplash, setShowSplash] = useState(true);
-  const splashDuration = 1400;
-
-  useEffect(() => {
-    const seen = window.sessionStorage.getItem("splash-seen");
-
-    if (seen === "true") {
-      setShowSplash(false);
-      return;
-    }
-
-    const timer = window.setTimeout(() => {
-      setShowSplash(false);
-      window.sessionStorage.setItem("splash-seen", "true");
-    }, splashDuration);
-
-    return () => window.clearTimeout(timer);
-  }, [splashDuration]);
+  const completeSplash = useCallback(() => setShowSplash(false), []);
 
   return (
     <QueryClientProvider client={queryClient}>
-      {showSplash && (
-        <div className="splash-screen" aria-live="polite" aria-label="Loading Solomon Joy Abosede">
-          <div className="splash-card">
-            <img src="/logo.png" alt="Solomon Joy Abosede logo" className="splash-logo" />
-            <p className="splash-name">Solomon Joy Abosede</p>
-            <span className="splash-tag">Vision. Strategy. Execution.</span>
-          </div>
-        </div>
-      )}
-
-      {!showSplash && (
-        <>
+      {showSplash && <SplashScreen onComplete={completeSplash} />}
+        <div inert={showSplash} aria-hidden={showSplash || undefined}>
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <SiteHeader />
           <main><Outlet /><FrameworkSection /></main>
           <SiteFooter />
-        </>
-      )}
+        </div>
     </QueryClientProvider>
   );
 }
