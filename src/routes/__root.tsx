@@ -8,7 +8,7 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 
 import { FrameworkSection, SiteHeader, SiteFooter } from "@/components/site/site-layout";
 import { SplashScreen } from "@/components/site/splash-screen";
