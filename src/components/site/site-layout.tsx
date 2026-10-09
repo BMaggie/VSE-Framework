@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { useId, useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight, ArrowUpRight, Mail, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { bookingUrl, contactEmail } from './brand';
@@ -21,40 +21,14 @@ export function HeaderPhoto({ src }: { src: string }) {
 }
 
 export function BrandMark({ size = 38 }: { size?: number }) {
-  const id = useId();
-  const aClip = `${id}-a`;
-  const sClip = `${id}-s`;
-  // Poppins Black outlines keep the silhouette stable before web fonts load.
-  const aGlyph = 'M504 107H268L233 0H0L259 708H515L773 0H539ZM450 274 386 471 322 274Z';
   return (
-    <svg
-      viewBox="0 0 150 100"
+    <img
+      src="/logo.png"
       width={size}
       height={size}
-      role="img"
-      aria-label="Solomon Joy Abosede logo"
-      className="brand-mark"
-      focusable="false"
-    >
-      <defs>
-        <clipPath id={sClip}>
-          <path d="M0 -20H625V575L525 720H0Z" />
-        </clipPath>
-        <clipPath id={aClip}>
-          <path d={aGlyph} clipRule="evenodd" />
-        </clipPath>
-      </defs>
-      <g transform="translate(2 86) scale(.075 -.1)" clipPath={`url(#${sClip})`}>
-        <path fill="var(--brand-mark-ink)" d="M28 227H264Q269 166 318 166Q336 166 348.5 174.5Q361 183 361 201Q361 226 334 241.5Q307 257 250 277Q182 301 137.5 324Q93 347 61 391Q29 435 30 504Q30 573 65.5 621.5Q101 670 162.5 695Q224 720 301 720Q431 720 507.5 660Q584 600 588 491H349Q348 521 334 534Q320 547 300 547Q286 547 277 537.5Q268 528 268 511Q268 487 294.5 471.5Q321 456 379 434Q446 409 489.5 386Q533 363 565 322Q597 281 597 219Q597 154 565 102.5Q533 51 472 22Q411 -7 327 -7Q200 -7 117.5 52.5Q35 112 28 227Z" />
-      </g>
-      <g transform="translate(45 86) scale(.075 -.1)">
-        <path fill="var(--brand-mark-purple)" d="M544 708V251Q544 90 453 5Q360 -82 205 -85Q38 -85 -75 35Q55 -10 160 48Q230 86 243 155Q250 193 281 193Q301 193 312 206Q323 219 323 251V708Z" />
-      </g>
-      <g transform="translate(89 86) scale(.075 -.1)" clipPath={`url(#${aClip})`}>
-        <path fill="var(--brand-mark-ink)" d="M0 -1H774V709H0Z" />
-        <path fill="var(--brand-mark-purple)" d="M525 -1H774V234L593 178Z" />
-      </g>
-    </svg>
+      alt="Solomon Joy Abosede logo"
+      className="block object-contain"
+    />
   );
 }
 
