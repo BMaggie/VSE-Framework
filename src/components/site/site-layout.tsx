@@ -22,29 +22,13 @@ export function HeaderPhoto({ src }: { src: string }) {
 
 export function BrandMark({ size = 38 }: { size?: number }) {
   return (
-    <svg
+    <img
+      src="/logo.png"
       width={size}
       height={size}
-      viewBox="0 0 40 40"
-      role="img"
-      aria-label="Solomon Joy Abosede logo"
-      className="block"
-    >
-      <text
-        x="20"
-        y="17.5"
-        textAnchor="middle"
-        dominantBaseline="central"
-        fontFamily="Inter, Arial, sans-serif"
-        fontSize="14.5"
-        fontWeight="800"
-        letterSpacing="0.4"
-        style={{ fill: 'var(--primary)' }}
-      >
-        SJA
-      </text>
-      <rect x="10" y="27" width="20" height="3" rx="1.5" style={{ fill: 'var(--primary)' }} />
-    </svg>
+      alt="Solomon Joy Abosede logo"
+      className="block object-contain"
+    />
   );
 }
 
