@@ -32,7 +32,7 @@ describe("Framework section placement", () => {
     ["/", 1],
     ["/about", 1],
     ["/contact", 0],
-  ] as const)("shows the framework section %i time(s) on %s", async (path, expected) => {
+  ] as const)("%s shows the framework section %i time(s)", async (path, expected) => {
     expect(await renderPage(path)).toBe(expected);
   });
 });
