@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { ArrowRight, Coins, Compass, MessageSquareText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { BookingButton, HeaderPhoto, JoyPortrait } from '@/components/site/site-layout';
+import { BookingButton, FrameworkSection, HeaderPhoto, JoyPortrait } from '@/components/site/site-layout';
 import { focusAreas, headerPhotos, pageMeta } from '@/components/site/brand';
 
 const icons = [Compass, Coins, MessageSquareText];
@@ -80,6 +80,8 @@ function HomePage() {
           <JoyPortrait />
         </div>
       </section>
+
+      <FrameworkSection />
     </>
   );
 }
