@@ -6,4 +6,4 @@
 - [x] Verify updated pages and the email draft flow.
 - [x] Add the Book a Session Calendly link and supplied portrait/header photos.
 - [x] Verify booking links and photos on all three pages.
-- [x] Test collapse rules and verify desktop, mobile, and reduced-motion interactions.
+- [x] Keep the framework strip page-owned (Home and About only) and verify the browser icon reference.
