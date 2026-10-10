@@ -17,3 +17,4 @@
 
 - Keep booking destinations and page-photo URLs in the shared brand module, with reusable booking and portrait controls in the site layout; this keeps all pages consistent.
 - Keep the first-load splash in a root-mounted overlay with the page mounted underneath; this avoids layout shifts and route-change replays.
+- Keep the root route rendering only shared chrome (header, outlet, footer); page sections like the framework strip are rendered explicitly by each page that wants them, so no page inherits content it didn't ask for.
