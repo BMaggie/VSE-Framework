@@ -10,7 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 
-import { FrameworkSection, SiteHeader, SiteFooter } from "@/components/site/site-layout";
+import { SiteHeader, SiteFooter } from "@/components/site/site-layout";
 import { SplashScreen } from "@/components/site/splash-screen";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -95,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" },
-      { rel: "icon", href: "/logo.png", type: "image/png" },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
@@ -128,7 +128,7 @@ function RootComponent() {
         <div inert={showSplash} aria-hidden={showSplash || undefined}>
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <SiteHeader />
-          <main><Outlet /><FrameworkSection /></main>
+          <main><Outlet /></main>
           <SiteFooter />
         </div>
     </QueryClientProvider>
