@@ -12,12 +12,11 @@ async function renderPage(path: string) {
     routeTree,
     history: createMemoryHistory({ initialEntries: [path] }),
     context: { queryClient: new QueryClient() },
-    defaultPreload: "off",
+    defaultPreload: false,
   });
 
   await router.load();
   const view = render(<RouterProvider router={router} />);
-  await router.state.pendingPromises;
 
   return view.container.querySelectorAll(".framework").length;
 }
