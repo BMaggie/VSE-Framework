@@ -19,3 +19,4 @@
 - Keep the first-load splash in a root-mounted overlay with the page mounted underneath; this avoids layout shifts and route-change replays.
 - Keep the root route rendering only shared chrome (header, outlet, footer); page sections like the framework strip are rendered explicitly by each page that wants them, so no page inherits content it didn't ask for.
 - Keep the hero typewriter in a client-started hook with a server-stable first phrase and grid-stacked hidden alternatives; this reserves wrapped dimensions without moving surrounding content.
+- Keep each focus area's icon on its own brand.ts item (area.icon) rather than a separate positional list; this keeps an icon tied to its title.

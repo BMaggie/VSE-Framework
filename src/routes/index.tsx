@@ -1,11 +1,10 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowRight, Coins, Compass, MessageSquareText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BookingButton, FrameworkSection, HeaderPhoto, JoyPortrait } from '@/components/site/site-layout';
 import { focusAreas, headerPhotos, pageMeta } from '@/components/site/brand';
 import { useTypewriter } from '@/hooks/use-typewriter';
 
-const icons = [Compass, Coins, MessageSquareText];
 const heroEndings = ['into impact', 'into traction', 'into real businesses'] as const;
 
 export const Route = createFileRoute('/')({
@@ -59,8 +58,8 @@ function HomePage() {
           </div>
 
           <div className="focus-grid">
-            {focusAreas.map((area, i) => {
-              const Icon = icons[i];
+            {focusAreas.map((area) => {
+              const Icon = area.icon;
               return (
                 <article className="focus-card" key={area.title}>
                   <div className="focus-card-top">{Icon && <Icon className="focus-icon" />}</div>
