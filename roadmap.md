@@ -7,5 +7,5 @@
 - [x] Add the Book a Session Calendly link and supplied portrait/header photos.
 - [x] Verify booking links and photos on all three pages.
 - [x] Keep the framework strip page-owned (Home and About only) and verify the browser icon reference.
-- [ ] Add the Home headline typewriter and subtitle comma; verify desktop/mobile stability and reduced motion.
-- [ ] Remove unused logo files after checking references (logo.png remains in use by the shared logo).
+- [x] Add the Home headline typewriter and subtitle comma; verify desktop/mobile stability and reduced motion.
+- [x] Check logo references and delete unused logo-removebg.png; retain logo.png because the navigation, footer and splash still use it.
