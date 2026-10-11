@@ -9,3 +9,4 @@
 - [x] Keep the framework strip page-owned (Home and About only) and verify the browser icon reference.
 - [x] Add the Home headline typewriter and subtitle comma; verify desktop/mobile stability and reduced motion.
 - [x] Check logo references and delete unused logo-removebg.png; retain logo.png because the navigation, footer and splash still use it.
+- [x] Move each focus card's icon onto its own brand item and verify the three icons on desktop and 375px.
