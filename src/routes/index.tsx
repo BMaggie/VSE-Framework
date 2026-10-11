@@ -3,8 +3,10 @@ import { ArrowRight, Coins, Compass, MessageSquareText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BookingButton, FrameworkSection, HeaderPhoto, JoyPortrait } from '@/components/site/site-layout';
 import { focusAreas, headerPhotos, pageMeta } from '@/components/site/brand';
+import { useTypewriter } from '@/hooks/use-typewriter';
 
 const icons = [Compass, Coins, MessageSquareText];
+const heroEndings = ['into impact', 'into traction', 'into real businesses'] as const;
 
 export const Route = createFileRoute('/')({
   head: () =>
@@ -16,18 +18,26 @@ export const Route = createFileRoute('/')({
 });
 
 function HomePage() {
+  const typedEnding = useTypewriter(heroEndings);
   return (
     <>
       <section className="hero">
         <HeaderPhoto src={headerPhotos.home} />
         <div className="site-container">
           <div className="eyebrow">VISION. STRATEGY. EXECUTION.</div>
-          <h1>
-            Helping founders turn ideas
-            <br className="hidden md:block" /> into impact
+          <h1 aria-label="Helping founders turn ideas into impact">
+            <span className="hero-static-line" aria-hidden="true">Helping founders turn ideas</span>
+            <span className="hero-typed-line" aria-hidden="true">
+              {heroEndings.map((phrase) => (
+                <span className="hero-typed-reserve" key={phrase}>{phrase}</span>
+              ))}
+              <span className="hero-typed-visible">
+                {typedEnding}<span className="hero-typed-caret" />
+              </span>
+            </span>
           </h1>
           <p className="hero-copy">
-            Entrepreneurial Advisor &amp; Technology Communicator — guiding founders through product
+            Entrepreneurial Advisor &amp; Technology Communicator, guiding founders through product
             strategy, community building, and Bitcoin-driven innovation.
           </p>
           <div className="hero-actions">

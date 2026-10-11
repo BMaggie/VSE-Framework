@@ -298,6 +298,52 @@
   text-shadow: 0 10px 30px rgba(76, 42, 88, 0.08);
 }
 
+.hero-static-line {
+  display: block;
+}
+
+.hero-typed-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 0.15em;
+}
+
+.hero-typed-line > span {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+
+.hero-typed-reserve {
+  visibility: hidden;
+}
+
+.hero-typed-caret {
+  display: inline;
+  position: relative;
+}
+
+.hero-typed-caret::after {
+  content: '';
+  position: absolute;
+  left: 0.06em;
+  top: 0.12em;
+  height: 0.85em;
+  border-left: 2px solid var(--primary);
+  animation: heroCaretBlink 1s steps(1, end) infinite;
+}
+
+@keyframes heroCaretBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-typed-caret::after { display: none; }
+}
+
 .hero-copy {
   font-size: 16px;
   line-height: 1.55;
