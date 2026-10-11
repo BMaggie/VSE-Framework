@@ -1,4 +1,4 @@
-import { Coins, Compass, MessageSquareText } from 'lucide-react';
+import { Bitcoin, Target, Users } from 'lucide-react';
 
 export const headerPhotos = {
   home: '/Hero.png',
@@ -14,20 +14,23 @@ export const focusAreas = [
     title: 'Product Strategy',
     description:
       'Clarify the right offer, the right positioning, and the next execution steps for sustainable traction.',
+    icon: Target,
   },
   {
     title: 'Community Building',
     description:
       'Turn audience attention into trusted communities that support product adoption and long-term growth.',
+    icon: Users,
   },
   {
     title: 'Bitcoin Education',
     description:
       'Break down complex ideas into clear, useful learning experiences that help people act with confidence.',
+    icon: Bitcoin,
   },
 ];
 
-export const icons = [Compass, Coins, MessageSquareText];
+
 
 export function pageMeta(title: string, description: string) {
   return {
